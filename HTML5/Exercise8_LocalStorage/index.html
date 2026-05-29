@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Local Storage Example</title>
+</head>
+
+<body>
+
+    <h1>User Event Preference</h1>
+
+    <label>Select Event:</label>
+
+    <select id="eventType">
+
+        <option value="">Select Event</option>
+        <option value="Music Event">Music Event</option>
+        <option value="Sports Event">Sports Event</option>
+        <option value="Food Festival">Food Festival</option>
+
+    </select>
+
+    <br><br>
+
+    <button onclick="savePreference()">
+        Save Preference
+    </button>
+
+    <button onclick="clearPreference()">
+        Clear Preference
+    </button>
+
+<script>
+
+function savePreference()
+{
+    let event =
+    document.getElementById("eventType").value;
+
+    localStorage.setItem(
+        "favoriteEvent",
+        event
+    );
+
+    alert("Preference Saved");
+}
+
+window.onload = function()
+{
+    let savedEvent =
+    localStorage.getItem(
+        "favoriteEvent"
+    );
+
+    if(savedEvent)
+    {
+        document.getElementById("eventType").value =
+        savedEvent;
+    }
+}
+
+function clearPreference()
+{
+    localStorage.removeItem(
+        "favoriteEvent"
+    );
+
+    alert("Preference Removed");
+}
+
+</script>
+
+</body>
+</html>
