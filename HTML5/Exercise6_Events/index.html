@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Events</title>
+
+    <style>
+        img {
+            width: 200px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Event Handling</h1>
+
+    <!-- onblur -->
+
+    <label>Phone Number:</label>
+    <br>
+
+    <input
+        type="text"
+        id="phone"
+        onblur="validatePhone()">
+
+    <br><br>
+
+    <!-- onchange -->
+
+    <label>Select Event:</label>
+    <br>
+
+    <select id="eventType" onchange="showFee()">
+
+        <option value="">Select</option>
+        <option value="100">Music Event</option>
+        <option value="200">Sports Event</option>
+        <option value="300">Food Festival</option>
+
+    </select>
+
+    <p id="fee"></p>
+
+    <hr>
+
+    <!-- onclick -->
+
+    <button onclick="showMessage()">
+        Submit
+    </button>
+
+    <p id="message"></p>
+
+    <hr>
+
+    <!-- ondblclick -->
+
+    <img
+        src="https://picsum.photos/200"
+        ondblclick="enlargeImage(this)">
+
+    <hr>
+
+    <!-- onkeyup -->
+
+    <textarea
+        id="feedback"
+        rows="5"
+        cols="40"
+        onkeyup="countCharacters()"></textarea>
+
+    <p>
+        Characters:
+        <span id="count">0</span>
+    </p>
+
+<script>
+
+function validatePhone()
+{
+    let phone =
+    document.getElementById("phone").value;
+
+    if(phone.length != 10)
+    {
+        alert("Phone number must be 10 digits");
+    }
+}
+
+function showFee()
+{
+    let fee =
+    document.getElementById("eventType").value;
+
+    document.getElementById("fee").innerHTML =
+    "Event Fee = ₹" + fee;
+}
+
+function showMessage()
+{
+    document.getElementById("message").innerHTML =
+    "Registration Successful";
+}
+
+function enlargeImage(img)
+{
+    img.style.width = "400px";
+}
+
+function countCharacters()
+{
+    let text =
+    document.getElementById("feedback").value;
+
+    document.getElementById("count").innerHTML =
+    text.length;
+}
+
+</script>
+
+</body>
+</html>
