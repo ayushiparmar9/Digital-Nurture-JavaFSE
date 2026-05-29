@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Community Event Portal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script
+src="https://code.jquery.com/jquery-3.7.1.min.js">
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Local Community Event Portal</h1>
+
+<p>
+Discover, Register and Explore Community Events
+</p>
+
+</header>
+
+<nav>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Events</a></li>
+
+<li><a href="#">Register</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="controls">
+
+<h2>Find Events</h2>
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search event name">
+
+<select id="categoryFilter">
+
+<option value="All">
+All Categories
+</option>
+
+<option value="Music">
+Music
+</option>
+
+<option value="Sports">
+Sports
+</option>
+
+<option value="Workshop">
+Workshop
+</option>
+
+</select>
+
+</section>
+
+<section>
+
+<h2>Upcoming Events</h2>
+
+<div id="eventsContainer">
+
+</div>
+
+</section>
+
+<section class="register-section">
+
+<h2>Register For Event</h2>
+
+<form id="registrationForm">
+
+<input
+type="text"
+name="name"
+placeholder="Enter Name">
+
+<input
+type="email"
+name="email"
+placeholder="Enter Email">
+
+<select name="event">
+
+<option value="">
+Select Event
+</option>
+
+</select>
+
+<button type="submit">
+Register
+</button>
+
+</form>
+
+<p id="error"></p>
+
+<p id="success"></p>
+
+</section>
+
+<section>
+
+<h2>Async Events Loader</h2>
+
+<button id="loadEvents">
+
+Load Events
+
+</button>
+
+<div id="loader">
+
+Loading Events...
+
+</div>
+
+</section>
+
+<section>
+
+<h2>jQuery Demo</h2>
+
+<button id="toggleCards">
+
+Show / Hide Event Cards
+
+</button>
+
+</section>
+
+<footer>
+
+<h3>Community Event Portal</h3>
+
+<p>
+Made using HTML, CSS and JavaScript
+</p>
+
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+
+</html>
